@@ -26,23 +26,20 @@ export function Hero() {
                 onClick={() => window.open('https://play.google.com/store/apps/details?id=com.agricola.app', '_blank')}
               >
                 <Play className="w-6 h-6 mr-3 fill-current" />
-                Download App
+                Join the Waitlist
               </Button>
-              <div className="flex items-center gap-4 px-2">
-                <div className="flex -space-x-3">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200" />
-                  ))}
-                </div>
-                <p className="text-sm font-bold text-[#081C15]/60 uppercase tracking-widest">
-                  Joined by 500+ Farmers
-                </p>
-              </div>
             </div>
 
-            <p className="text-[#1B4332] font-bold text-lg italic opacity-50">
-              "Agricola e thusa balemi go tswela pele"
-            </p>
+            <div className="grid grid-cols-2 gap-8 pt-10 border-t border-[#081C15]/5">
+              <div className="space-y-1">
+                <p className="text-3xl font-black text-[#081C15]">20%+</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#081C15]/40">Avg. Loss in Botswana</p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-3xl font-black text-[#1B4332]">30%</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#081C15]/40">Our Reduction Goal</p>
+              </div>
+            </div>
           </div>
 
           {/* Image */}

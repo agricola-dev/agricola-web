@@ -12,7 +12,6 @@ export function Navbar({ scrolled }: NavbarProps) {
   const navLinks = [
     { href: '#features', label: 'Features' },
     { href: '#how-it-works', label: 'Flow' },
-    { href: '#impact', label: 'Impact' },
   ];
 
   const scrollToSection = (href: string) => {

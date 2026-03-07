@@ -2,7 +2,6 @@ export function Footer() {
   const links = [
     { label: 'Features', href: '#features' },
     { label: 'Flow', href: '#how-it-works' },
-    { label: 'Impact', href: '#impact' },
     { label: 'Merchant', href: 'https://dashboard.agricola.co.bw' },
   ];
 

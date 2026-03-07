@@ -7,12 +7,12 @@ export function DownloadCTA() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-16">
         <div className="space-y-6 scroll-reveal">
           <h2 className="text-6xl sm:text-7xl lg:text-9xl font-black tracking-tighter leading-[0.8]">
-            Begin Your <br />
-            <span className="text-[#1B4332]">Journey.</span>
+            Be Part of the <br />
+            <span className="text-[#1B4332]">Future.</span>
           </h2>
           <p className="text-xl sm:text-2xl text-[#FDFCF9]/60 max-w-2xl mx-auto font-medium">
-            Join the farmers digitizing the future of Botswana's agriculture.
-            Always free. Always local.
+            Join the waitlist to be among the first to experience the new standard in Botswana's agriculture.
+            Coming soon to Google Play.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export function DownloadCTA() {
             onClick={() => window.open('https://play.google.com/store/apps/details?id=com.agricola.app', '_blank')}
           >
             <Play className="w-8 h-8 mr-4 fill-current" />
-            Get it on Google Play
+            Join the Waitlist
           </Button>
         </div>
 
