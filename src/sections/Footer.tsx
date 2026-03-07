@@ -45,8 +45,8 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <a href="#" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-[#2E7D52] flex items-center justify-center">
-                <Sprout className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+                <img src="/images/logo.jpg" alt="Agricola Logo" className="w-full h-full object-cover" />
               </div>
               <span className="text-xl font-bold">Agricola</span>
             </a>

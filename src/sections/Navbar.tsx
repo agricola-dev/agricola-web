@@ -36,8 +36,8 @@ export function Navbar({ scrolled }: NavbarProps) {
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-[#2E7D52] flex items-center justify-center group-hover:scale-105 transition-transform">
-              <Sprout className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden group-hover:scale-105 transition-transform">
+              <img src="/images/logo.jpg" alt="Agricola Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-xl font-bold text-[#1A1A1A]">Agricola</span>
           </a>
