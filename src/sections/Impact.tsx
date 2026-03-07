@@ -1,12 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
-import { Users, TrendingDown, Package, MapPin } from 'lucide-react';
+// import { useEffect, useRef, useState } from 'react'; // Hidden for future use
+// import { Users, TrendingDown, Package, MapPin } from 'lucide-react'; // Hidden for future use
 
+/*
 interface CounterProps {
   end: number;
   suffix?: string;
   duration?: number;
 }
+*/
 
+// Hidden for future use
+/*
 function Counter({ end, suffix = '', duration = 2000 }: CounterProps) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -60,8 +64,11 @@ function Counter({ end, suffix = '', duration = 2000 }: CounterProps) {
     </span>
   );
 }
+*/
 
 export function Impact() {
+  // Hidden for future use
+  /*
   const stats = [
     {
       icon: Users,
@@ -92,6 +99,7 @@ export function Impact() {
       color: 'bg-white/10',
     },
   ];
+  */
 
   return (
     <section id="impact" className="py-20 lg:py-28 bg-[#2E7D52] relative overflow-hidden">

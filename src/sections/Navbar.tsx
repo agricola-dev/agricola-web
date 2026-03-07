@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Menu, X, Sprout, Store, ChevronDown } from 'lucide-react';
+import { Menu, X, Store, ChevronDown } from 'lucide-react';
+// import { Sprout } from 'lucide-react'; // Hidden for future use
 import { Button } from '@/components/ui/button';
 
 interface NavbarProps {

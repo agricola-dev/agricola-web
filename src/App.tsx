@@ -5,7 +5,7 @@ import { ProblemSolution } from './sections/ProblemSolution';
 import { Features } from './sections/Features';
 import { HowItWorks } from './sections/HowItWorks';
 import { Impact } from './sections/Impact';
-import { Testimonials } from './sections/Testimonials';
+// import { Testimonials } from './sections/Testimonials'; // Hidden for future use
 import { DownloadCTA } from './sections/DownloadCTA';
 import { Footer } from './sections/Footer';
 

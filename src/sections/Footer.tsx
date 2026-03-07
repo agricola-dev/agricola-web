@@ -1,4 +1,5 @@
-import { Sprout, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
+// import { Sprout } from 'lucide-react'; // Hidden for future use
 
 export function Footer() {
   const quickLinks = [
