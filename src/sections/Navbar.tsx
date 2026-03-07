@@ -33,7 +33,9 @@ export function Navbar({ scrolled }: NavbarProps) {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 rounded-full bg-[#1B4332]" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-500">
+              <img src="/images/logo.jpg" alt="Agricola Logo" className="w-full h-full object-cover" />
+            </div>
             <span className="text-2xl font-black text-[#081C15] tracking-tighter">Agricola</span>
           </a>
 
@@ -81,7 +83,9 @@ export function Navbar({ scrolled }: NavbarProps) {
         <div className="fixed inset-0 bg-[#FDFCF9] z-50 flex flex-col p-8 space-y-12 animate-fade-in">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#1B4332]" />
+              <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/logo.jpg" alt="Agricola Logo" className="w-full h-full object-cover" />
+              </div>
               <span className="text-2xl font-black text-[#081C15] tracking-tighter">Agricola</span>
             </div>
             <button onClick={() => setMobileMenuOpen(false)}>

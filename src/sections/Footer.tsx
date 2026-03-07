@@ -12,7 +12,9 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-24">
           <div className="space-y-8 max-w-sm">
             <div className="flex items-center gap-3">
-              <div className="w-6 h-6 rounded-full bg-[#1B4332]" />
+              <div className="w-8 h-8 rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/logo.jpg" alt="Agricola Logo" className="w-full h-full object-cover" />
+              </div>
               <span className="text-xl font-black text-[#081C15] tracking-tighter">Agricola</span>
             </div>
             <p className="text-lg text-[#081C15]/40 leading-relaxed font-medium">
