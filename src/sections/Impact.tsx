@@ -112,8 +112,8 @@ export function Impact() {
           </p>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* Stats Grid - Hidden for future use */}
+        {/* <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -129,7 +129,7 @@ export function Impact() {
               <p className="text-white/80">{stat.label}</p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Additional Info */}
         <div className="scroll-reveal mt-16 grid md:grid-cols-3 gap-8">

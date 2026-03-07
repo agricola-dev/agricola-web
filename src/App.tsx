@@ -52,7 +52,8 @@ function App() {
         <Features />
         <HowItWorks />
         <Impact />
-        <Testimonials />
+        {/* Hidden for future use: What Farmers Are Saying */}
+        {/* <Testimonials /> */}
         <DownloadCTA />
       </main>
       <Footer />
