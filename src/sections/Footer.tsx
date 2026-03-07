@@ -1,171 +1,64 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
-// import { Sprout } from 'lucide-react'; // Hidden for future use
-
 export function Footer() {
-  const quickLinks = [
+  const links = [
     { label: 'Features', href: '#features' },
-    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Flow', href: '#how-it-works' },
     { label: 'Impact', href: '#impact' },
-    { label: 'Download', href: '#download' },
+    { label: 'Merchant', href: 'https://dashboard.agricola.co.bw' },
   ];
-
-  const businessLinks = [
-    { label: 'Merchant Dashboard', href: 'https://dashboard.agricola.co.bw', external: true },
-    { label: 'Partner with Us', href: '#', external: true },
-    { label: 'Contact Sales', href: 'mailto:sales@agricola.co.bw', external: true },
-  ];
-
-  const supportLinks = [
-    { label: 'Help Center', href: '#', external: true },
-    { label: 'Contact Us', href: 'mailto:support@agricola.co.bw', external: true },
-    { label: 'Privacy Policy', href: '#', external: true },
-    { label: 'Terms of Service', href: '#', external: true },
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com/agricola', label: 'Facebook' },
-    { icon: Twitter, href: 'https://twitter.com/agricola', label: 'Twitter' },
-    { icon: Instagram, href: 'https://instagram.com/agricola', label: 'Instagram' },
-    { icon: Linkedin, href: 'https://linkedin.com/company/agricola', label: 'LinkedIn' },
-  ];
-
-  const scrollToSection = (href: string) => {
-    if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
 
   return (
-    <footer className="bg-[#1A1A1A] text-white">
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand Column */}
-          <div className="space-y-6">
-            <a href="#" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
-                <img src="/images/logo.jpg" alt="Agricola Logo" className="w-full h-full object-cover" />
-              </div>
-              <span className="text-xl font-bold">Agricola</span>
-            </a>
-            <p className="text-gray-400 leading-relaxed">
-              Empowering Botswana's farmers with smart tools to track crops, manage inventory, and reduce post-harvest losses.
-            </p>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-gray-400">
-                <Mail className="w-5 h-5 text-[#2E7D52]" />
-                <a href="mailto:hello@agricola.co.bw" className="hover:text-white transition-colors">
-                  hello@agricola.co.bw
-                </a>
-              </div>
-              <div className="flex items-center gap-3 text-gray-400">
-                <Phone className="w-5 h-5 text-[#2E7D52]" />
-                <a href="tel:+26712345678" className="hover:text-white transition-colors">
-                  +267 123 456 78
-                </a>
-              </div>
-              <div className="flex items-center gap-3 text-gray-400">
-                <MapPin className="w-5 h-5 text-[#2E7D52]" />
-                <span>Gaborone, Botswana</span>
-              </div>
+    <footer className="bg-[#FDFCF9] py-24 border-t border-[#081C15]/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-24">
+          <div className="space-y-8 max-w-sm">
+            <div className="flex items-center gap-3">
+              <div className="w-6 h-6 rounded-full bg-[#1B4332]" />
+              <span className="text-xl font-black text-[#081C15] tracking-tighter">Agricola</span>
             </div>
+            <p className="text-lg text-[#081C15]/40 leading-relaxed font-medium">
+              The digital infrastructure for Botswana's agricultural future. 
+              Smarter tracking. Less waste. Higher yields.
+            </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
-                  >
-                    <ChevronRight className="w-4 h-4 text-[#2E7D52]" />
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-16 lg:gap-24">
+            <div className="space-y-6">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#081C15]/30 text-balance">Product</p>
+              <ul className="space-y-4">
+                {links.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="text-lg font-bold text-[#081C15] hover:text-[#1B4332] transition-colors">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="space-y-6">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#081C15]/30">Connect</p>
+              <ul className="space-y-4">
+                <li><a href="#" className="text-lg font-bold text-[#081C15]">Instagram</a></li>
+                <li><a href="#" className="text-lg font-bold text-[#081C15]">Twitter</a></li>
+                <li><a href="#" className="text-lg font-bold text-[#081C15]">Facebook</a></li>
+              </ul>
+            </div>
 
-          {/* For Businesses */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">For Businesses</h3>
-            <ul className="space-y-3">
-              {businessLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target={link.external ? '_blank' : undefined}
-                    rel={link.external ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
-                  >
-                    <ChevronRight className="w-4 h-4 text-[#2E7D52]" />
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Support</h3>
-            <ul className="space-y-3">
-              {supportLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target={link.external ? '_blank' : undefined}
-                    rel={link.external ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
-                  >
-                    <ChevronRight className="w-4 h-4 text-[#2E7D52]" />
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="space-y-6">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#081C15]/30">Contact</p>
+              <p className="text-lg font-bold text-[#081C15]">hello@agricola.co.bw</p>
+              <p className="text-lg font-bold text-[#081C15]">+267 123 456 78</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Copyright */}
-            <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Agricola. All rights reserved.
-            </p>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#2E7D52] transition-colors"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-
-            {/* Language Toggle */}
-            <div className="flex items-center gap-2 text-sm">
-              <span className="text-gray-400">Language:</span>
-              <button className="text-[#2E7D52] font-medium hover:underline">English</button>
-              <span className="text-gray-600">|</span>
-              <button className="text-gray-400 hover:text-white transition-colors">Setswana</button>
-            </div>
+        <div className="mt-24 pt-12 border-t border-[#081C15]/5 flex flex-col sm:flex-row justify-between items-center gap-8">
+          <p className="text-sm font-bold text-[#081C15]/30 uppercase tracking-widest">
+            © {new Date().getFullYear()} Agricola. Botswana.
+          </p>
+          <div className="flex gap-8">
+            <a href="#" className="text-sm font-bold text-[#081C15]/30 uppercase tracking-widest hover:text-[#081C15]">Privacy</a>
+            <a href="#" className="text-sm font-bold text-[#081C15]/30 uppercase tracking-widest hover:text-[#081C15]">Terms</a>
           </div>
         </div>
       </div>

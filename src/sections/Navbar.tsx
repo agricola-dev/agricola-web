@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Store, ChevronDown } from 'lucide-react';
-// import { Sprout } from 'lucide-react'; // Hidden for future use
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface NavbarProps {
@@ -9,14 +8,11 @@ interface NavbarProps {
 
 export function Navbar({ scrolled }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState<'en' | 'tn'>('en');
 
   const navLinks = [
-    { href: '#features', label: currentLang === 'en' ? 'Features' : 'Ditshwanelo' },
-    { href: '#how-it-works', label: currentLang === 'en' ? 'How It Works' : 'Tsela e e Dirang' },
-    { href: '#impact', label: currentLang === 'en' ? 'Impact' : 'Tlhokego' },
-    { href: '#download', label: currentLang === 'en' ? 'Download' : 'Downloada' },
+    { href: '#features', label: 'Features' },
+    { href: '#how-it-works', label: 'Flow' },
+    { href: '#impact', label: 'Impact' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -29,27 +25,25 @@ export function Navbar({ scrolled }: NavbarProps) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-nav' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? 'bg-[#FDFCF9]/80 backdrop-blur-xl py-4' : 'bg-transparent py-8'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[72px]">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl overflow-hidden group-hover:scale-105 transition-transform">
-              <img src="/images/logo.jpg" alt="Agricola Logo" className="w-full h-full object-cover" />
-            </div>
-            <span className="text-xl font-bold text-[#1A1A1A]">Agricola</span>
+          <a href="#" className="flex items-center gap-3 group">
+            <div className="w-8 h-8 rounded-full bg-[#1B4332]" />
+            <span className="text-2xl font-black text-[#081C15] tracking-tighter">Agricola</span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-[#5C5C5C] hover:text-[#2E7D52] font-medium transition-colors"
+                className="text-sm font-bold uppercase tracking-[0.2em] text-[#081C15]/40 hover:text-[#1B4332] transition-colors"
               >
                 {link.label}
               </button>
@@ -57,125 +51,67 @@ export function Navbar({ scrolled }: NavbarProps) {
           </div>
 
           {/* Desktop CTAs */}
-          <div className="hidden md:flex items-center gap-4">
-            {/* Language Selector */}
-            <div className="relative">
-              <button
-                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                className="flex items-center gap-1 text-sm text-[#5C5C5C] hover:text-[#2E7D52] transition-colors"
-              >
-                {currentLang === 'en' ? 'English' : 'Setswana'}
-                <ChevronDown className="w-4 h-4" />
-              </button>
-              {langDropdownOpen && (
-                <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-100 py-1 min-w-[120px]">
-                  <button
-                    onClick={() => {
-                      setCurrentLang('en');
-                      setLangDropdownOpen(false);
-                    }}
-                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 ${
-                      currentLang === 'en' ? 'text-[#2E7D52] font-medium' : 'text-[#5C5C5C]'
-                    }`}
-                  >
-                    English
-                  </button>
-                  <button
-                    onClick={() => {
-                      setCurrentLang('tn');
-                      setLangDropdownOpen(false);
-                    }}
-                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 ${
-                      currentLang === 'tn' ? 'text-[#2E7D52] font-medium' : 'text-[#5C5C5C]'
-                    }`}
-                  >
-                    Setswana
-                  </button>
-                </div>
-              )}
-            </div>
-
-            <Button
-              variant="outline"
-              className="border-[#2E7D52] text-[#2E7D52] hover:bg-[#E8F5E9]"
+          <div className="hidden md:flex items-center gap-8">
+            <button 
+              className="text-sm font-bold uppercase tracking-[0.2em] text-[#081C15]/40 hover:text-[#1B4332] transition-colors"
               onClick={() => window.open('https://dashboard.agricola.co.bw', '_blank')}
             >
-              <Store className="w-4 h-4 mr-2" />
-              {currentLang === 'en' ? 'Merchant Dashboard' : 'Dashboard ya Morekisi'}
-            </Button>
+              Merchant
+            </button>
             <Button
-              className="bg-[#2E7D52] hover:bg-[#1B5E3A] text-white"
+              className="bg-[#1B4332] hover:bg-[#081C15] text-white rounded-full font-bold px-8 py-6"
               onClick={() => scrollToSection('#download')}
             >
-              {currentLang === 'en' ? 'Get the App' : 'Tswaya App'}
+              Get App
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-[#1A1A1A]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-[#1A1A1A]" />
-            ) : (
-              <Menu className="w-6 h-6 text-[#1A1A1A]" />
-            )}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
-          <div className="px-4 py-4 space-y-3">
+        <div className="fixed inset-0 bg-[#FDFCF9] z-50 flex flex-col p-8 space-y-12 animate-fade-in">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#1B4332]" />
+              <span className="text-2xl font-black text-[#081C15] tracking-tighter">Agricola</span>
+            </div>
+            <button onClick={() => setMobileMenuOpen(false)}>
+              <X className="w-8 h-8" />
+            </button>
+          </div>
+          <div className="flex flex-col space-y-8">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left py-2 text-[#5C5C5C] hover:text-[#2E7D52] font-medium"
+                className="text-5xl font-black text-[#081C15] tracking-tighter text-left"
               >
                 {link.label}
               </button>
             ))}
-            <div className="pt-3 border-t border-gray-100 space-y-3">
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setCurrentLang('en')}
-                  className={`px-3 py-1 text-sm rounded ${
-                    currentLang === 'en'
-                      ? 'bg-[#2E7D52] text-white'
-                      : 'bg-gray-100 text-[#5C5C5C]'
-                  }`}
-                >
-                  English
-                </button>
-                <button
-                  onClick={() => setCurrentLang('tn')}
-                  className={`px-3 py-1 text-sm rounded ${
-                    currentLang === 'tn'
-                      ? 'bg-[#2E7D52] text-white'
-                      : 'bg-gray-100 text-[#5C5C5C]'
-                  }`}
-                >
-                  Setswana
-                </button>
-              </div>
-              <Button
-                variant="outline"
-                className="w-full border-[#2E7D52] text-[#2E7D52]"
-                onClick={() => window.open('https://dashboard.agricola.co.bw', '_blank')}
-              >
-                <Store className="w-4 h-4 mr-2" />
-                {currentLang === 'en' ? 'Merchant Dashboard' : 'Dashboard ya Morekisi'}
-              </Button>
-              <Button
-                className="w-full bg-[#2E7D52] hover:bg-[#1B5E3A] text-white"
-                onClick={() => scrollToSection('#download')}
-              >
-                {currentLang === 'en' ? 'Get the App' : 'Tswaya App'}
-              </Button>
-            </div>
+            <button 
+              className="text-5xl font-black text-[#081C15]/40 tracking-tighter text-left"
+              onClick={() => window.open('https://dashboard.agricola.co.bw', '_blank')}
+            >
+              Merchant
+            </button>
+          </div>
+          <div className="mt-auto">
+            <Button
+              className="w-full bg-[#1B4332] text-white rounded-full font-bold py-8 text-xl"
+              onClick={() => scrollToSection('#download')}
+            >
+              Download App
+            </Button>
           </div>
         </div>
       )}
