@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 interface NavbarProps {
   scrolled: boolean;
@@ -10,14 +10,14 @@ export function Navbar({ scrolled }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: '#features', label: 'Features' },
-    { href: '#how-it-works', label: 'Flow' },
+    { href: "#features", label: "Features" },
+    { href: "#how-it-works", label: "Flow" },
   ];
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setMobileMenuOpen(false);
   };
@@ -25,7 +25,9 @@ export function Navbar({ scrolled }: NavbarProps) {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-[#FDFCF9]/80 backdrop-blur-xl py-4' : 'bg-transparent py-8'
+        scrolled
+          ? "bg-[#FDFCF9]/80 backdrop-blur-xl py-4"
+          : "bg-transparent py-8"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,9 +35,15 @@ export function Navbar({ scrolled }: NavbarProps) {
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-500">
-              <img src="/images/logo.jpg" alt="Agricola Logo" className="w-full h-full object-cover" />
+              <img
+                src="/images/logo.jpg"
+                alt="Agricola Logo"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <span className="text-2xl font-black text-[#081C15] tracking-tighter">Agricola</span>
+            <span className="text-2xl font-black text-[#081C15] tracking-tighter">
+              Agricola
+            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -53,15 +61,17 @@ export function Navbar({ scrolled }: NavbarProps) {
 
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-8">
-            <button 
+            <button
               className="text-sm font-bold uppercase tracking-[0.2em] text-[#081C15]/40 hover:text-[#1B4332] transition-colors"
-              onClick={() => window.open('https://dashboard.agricola.co.bw', '_blank')}
+              onClick={() =>
+                window.open("https://dashboard.agricola-app.com", "_blank")
+              }
             >
               Merchant
             </button>
             <Button
               className="bg-[#1B4332] hover:bg-[#081C15] text-white rounded-full font-bold px-8 py-6"
-              onClick={() => scrollToSection('#download')}
+              onClick={() => scrollToSection("#download")}
             >
               Get App
             </Button>
@@ -72,7 +82,11 @@ export function Navbar({ scrolled }: NavbarProps) {
             className="md:hidden p-2 text-[#1A1A1A]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
@@ -83,9 +97,15 @@ export function Navbar({ scrolled }: NavbarProps) {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/logo.jpg" alt="Agricola Logo" className="w-full h-full object-cover" />
+                <img
+                  src="/images/logo.jpg"
+                  alt="Agricola Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <span className="text-2xl font-black text-[#081C15] tracking-tighter">Agricola</span>
+              <span className="text-2xl font-black text-[#081C15] tracking-tighter">
+                Agricola
+              </span>
             </div>
             <button onClick={() => setMobileMenuOpen(false)}>
               <X className="w-8 h-8" />
@@ -101,9 +121,11 @@ export function Navbar({ scrolled }: NavbarProps) {
                 {link.label}
               </button>
             ))}
-            <button 
+            <button
               className="text-5xl font-black text-[#081C15]/40 tracking-tighter text-left"
-              onClick={() => window.open('https://dashboard.agricola.co.bw', '_blank')}
+              onClick={() =>
+                window.open("https://dashboard.agricola-app.com", "_blank")
+              }
             >
               Merchant
             </button>
@@ -111,7 +133,7 @@ export function Navbar({ scrolled }: NavbarProps) {
           <div className="mt-auto">
             <Button
               className="w-full bg-[#1B4332] text-white rounded-full font-bold py-8 text-xl"
-              onClick={() => scrollToSection('#download')}
+              onClick={() => scrollToSection("#download")}
             >
               Download App
             </Button>
