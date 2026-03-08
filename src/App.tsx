@@ -4,8 +4,6 @@ import { Hero } from './sections/Hero';
 import { ProblemSolution } from './sections/ProblemSolution';
 import { Features } from './sections/Features';
 import { HowItWorks } from './sections/HowItWorks';
-import { Impact } from './sections/Impact';
-import { Testimonials } from './sections/Testimonials';
 import { DownloadCTA } from './sections/DownloadCTA';
 import { Footer } from './sections/Footer';
 
