@@ -67,7 +67,7 @@ export function Navbar({ scrolled }: NavbarProps) {
                 window.open("https://dashboard.agricola-app.com", "_blank")
               }
             >
-              Merchant
+              Dashboard
             </button>
             <Button
               className="bg-[#1B4332] hover:bg-[#081C15] text-white rounded-full font-bold px-8 py-6"
@@ -127,7 +127,7 @@ export function Navbar({ scrolled }: NavbarProps) {
                 window.open("https://dashboard.agricola-app.com", "_blank")
               }
             >
-              Merchant
+              Dashboard
             </button>
           </div>
           <div className="mt-auto">
