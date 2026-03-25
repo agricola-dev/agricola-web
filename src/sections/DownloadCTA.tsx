@@ -1,9 +1,12 @@
-import { Button } from '@/components/ui/button';
-import { Play } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Play } from "lucide-react";
 
 export function DownloadCTA() {
   return (
-    <section id="download" className="section-padding bg-[#081C15] text-[#FDFCF9] overflow-hidden">
+    <section
+      id="download"
+      className="section-padding bg-[#081C15] text-[#FDFCF9] overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-16">
         <div className="space-y-6 scroll-reveal">
           <h2 className="text-6xl sm:text-7xl lg:text-9xl font-black tracking-tighter leading-[0.8]">
@@ -11,8 +14,8 @@ export function DownloadCTA() {
             <span className="text-[#1B4332]">Future.</span>
           </h2>
           <p className="text-xl sm:text-2xl text-[#FDFCF9]/60 max-w-2xl mx-auto font-medium">
-            Join the waitlist to be among the first to experience the new standard in Botswana's agriculture.
-            Coming soon to Google Play.
+            Download the app and start tracking your crops, reducing waste, and
+            connect with Botswana's agricultural community.
           </p>
         </div>
 
@@ -20,10 +23,15 @@ export function DownloadCTA() {
           <Button
             size="lg"
             className="bg-[#1B4332] hover:bg-white hover:text-[#081C15] text-white px-12 py-10 text-2xl rounded-full transition-all duration-500 shadow-2xl"
-            onClick={() => window.open('https://play.google.com/store/apps/details?id=com.agricola.app', '_blank')}
+            onClick={() =>
+              window.open(
+                "https://play.google.com/store/apps/details?id=com.agricola.prod",
+                "_blank",
+              )
+            }
           >
             <Play className="w-8 h-8 mr-4 fill-current" />
-            Join the Waitlist
+            Download on Google Play
           </Button>
         </div>
 

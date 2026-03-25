@@ -21,10 +21,10 @@ export function Hero() {
             <Button
               size="lg"
               className="bg-[#1B4332] hover:bg-[#081C15] text-white px-10 py-8 text-xl rounded-full transition-all duration-300 shadow-soft"
-              onClick={() => window.open('https://play.google.com/store/apps/details?id=com.agricola.app', '_blank')}
+              onClick={() => window.open('https://play.google.com/store/apps/details?id=com.agricola.prod', '_blank')}
             >
               <Play className="w-6 h-6 mr-3 fill-current" />
-              Join the Waitlist
+              Download on Google Play
             </Button>
           </div>
 
