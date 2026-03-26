@@ -79,7 +79,7 @@ export function Navbar({ scrolled }: NavbarProps) {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-[#1A1A1A]"
+            className="md:hidden p-2 text-[#081C15]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (

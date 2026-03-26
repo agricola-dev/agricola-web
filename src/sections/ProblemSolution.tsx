@@ -7,7 +7,7 @@ export function ProblemSolution() {
             <div className="space-y-6">
               <h2 className="text-5xl sm:text-6xl font-black text-[#081C15] leading-[1.1]">
                 The Silent <br />
-                <span className="text-red-600">Crisis.</span>
+                <span className="text-destructive">Crisis.</span>
               </h2>
               <p className="text-2xl text-[#081C15]/70 leading-relaxed font-medium">
                 40% of Botswana's agricultural produce never reaches the market. It's a loss of income, a loss of effort, and a threat to food security.
