@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './sections/Navbar';
-import { Hero } from './sections/Hero';
-import { ProblemSolution } from './sections/ProblemSolution';
-import { Features } from './sections/Features';
-import { HowItWorks } from './sections/HowItWorks';
-import { DownloadCTA } from './sections/DownloadCTA';
 import { Footer } from './sections/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
+import { HomePage } from './pages/HomePage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { TermsOfServicePage } from './pages/TermsOfServicePage';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,42 +19,21 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll reveal animation
-  useEffect(() => {
-    const observerCallback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, {
-      threshold: 0.2,
-      rootMargin: '0px 0px -50px 0px',
-    });
-
-    document.querySelectorAll('.scroll-reveal').forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar scrolled={scrolled} />
-      <main>
-        <Hero />
-        <ProblemSolution />
-        <Features />
-        <HowItWorks />
-        {/* <Impact /> */}
-        {/* <Testimonials /> */}
-        <DownloadCTA />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-white">
+        <Navbar scrolled={scrolled} />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsOfServicePage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

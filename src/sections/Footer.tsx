@@ -1,8 +1,23 @@
+import { Link, useNavigate, useLocation } from "react-router-dom";
+
 export function Footer() {
-  const links = [
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const scrollToSection = (href: string) => {
+    if (pathname === '/') {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate('/', { state: { scrollTo: href } });
+    }
+  };
+
+  const productLinks = [
     { label: "Features", href: "#features" },
     { label: "Flow", href: "#how-it-works" },
-    { label: "Merchant", href: "https://dashboard.agricola-app.com" },
   ];
 
   return (
@@ -10,7 +25,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-24">
           <div className="space-y-8 max-w-sm">
-            <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-xl overflow-hidden shadow-sm">
                 <img
                   src="/images/logo.jpg"
@@ -21,7 +36,7 @@ export function Footer() {
               <span className="text-xl font-black text-[#081C15] tracking-tighter">
                 Agricola
               </span>
-            </div>
+            </Link>
             <p className="text-lg text-[#081C15]/40 leading-relaxed font-medium">
               The digital infrastructure for Botswana's agricultural future.
               Smarter tracking. Less waste. Higher yields.
@@ -34,16 +49,26 @@ export function Footer() {
                 Product
               </p>
               <ul className="space-y-4">
-                {links.map((link) => (
+                {productLinks.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
+                    <button
+                      onClick={() => scrollToSection(link.href)}
                       className="text-lg font-bold text-[#081C15] hover:text-[#1B4332] transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </button>
                   </li>
                 ))}
+                <li>
+                  <a
+                    href="https://dashboard.agricola-app.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-bold text-[#081C15] hover:text-[#1B4332] transition-colors"
+                  >
+                    Merchant
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -89,18 +114,18 @@ export function Footer() {
             © {new Date().getFullYear()} Agricola. Botswana.
           </p>
           <div className="flex gap-8">
-            <a
-              href="#"
+            <Link
+              to="/privacy"
               className="text-sm font-bold text-[#081C15]/30 uppercase tracking-widest hover:text-[#081C15]"
             >
               Privacy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/terms"
               className="text-sm font-bold text-[#081C15]/30 uppercase tracking-widest hover:text-[#081C15]"
             >
               Terms
-            </a>
+            </Link>
           </div>
         </div>
       </div>

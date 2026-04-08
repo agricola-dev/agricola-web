@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 interface NavbarProps {
   scrolled: boolean;
@@ -8,6 +9,8 @@ interface NavbarProps {
 
 export function Navbar({ scrolled }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const navLinks = [
     { href: "#features", label: "Features" },
@@ -15,9 +18,13 @@ export function Navbar({ scrolled }: NavbarProps) {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (pathname === '/') {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate('/', { state: { scrollTo: href } });
     }
     setMobileMenuOpen(false);
   };
@@ -33,7 +40,7 @@ export function Navbar({ scrolled }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-500">
               <img
                 src="/images/logo.jpg"
@@ -44,7 +51,7 @@ export function Navbar({ scrolled }: NavbarProps) {
             <span className="text-2xl font-black text-[#081C15] tracking-tighter">
               Agricola
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12">
@@ -95,7 +102,7 @@ export function Navbar({ scrolled }: NavbarProps) {
       {mobileMenuOpen && (
         <div className="fixed inset-0 bg-[#FDFCF9] z-50 flex flex-col p-8 space-y-12 animate-fade-in">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
               <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm">
                 <img
                   src="/images/logo.jpg"
@@ -106,7 +113,7 @@ export function Navbar({ scrolled }: NavbarProps) {
               <span className="text-2xl font-black text-[#081C15] tracking-tighter">
                 Agricola
               </span>
-            </div>
+            </Link>
             <button onClick={() => setMobileMenuOpen(false)}>
               <X className="w-8 h-8" />
             </button>
