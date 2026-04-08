@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { trackCTAClick } from "@/lib/analytics";
 
 interface NavbarProps {
   scrolled: boolean;
@@ -78,7 +79,7 @@ export function Navbar({ scrolled }: NavbarProps) {
             </button>
             <Button
               className="bg-[#1B4332] hover:bg-[#081C15] text-white rounded-full font-bold px-8 py-6"
-              onClick={() => scrollToSection("#download")}
+              onClick={() => { trackCTAClick('get_app', 'navbar'); scrollToSection("#download"); }}
             >
               Get App
             </Button>
@@ -140,7 +141,7 @@ export function Navbar({ scrolled }: NavbarProps) {
           <div className="mt-auto">
             <Button
               className="w-full bg-[#1B4332] text-white rounded-full font-bold py-8 text-xl"
-              onClick={() => scrollToSection("#download")}
+              onClick={() => { trackCTAClick('get_app', 'navbar_mobile'); scrollToSection("#download"); }}
             >
               Download App
             </Button>

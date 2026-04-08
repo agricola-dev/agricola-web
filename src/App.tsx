@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './sections/Navbar';
 import { Footer } from './sections/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
+import { RouteTracker } from './components/RouteTracker';
 import { HomePage } from './pages/HomePage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
@@ -22,6 +23,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <RouteTracker />
       <div className="min-h-screen bg-white">
         <Navbar scrolled={scrolled} />
         <main>

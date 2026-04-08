@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { trackCTAClick } from "@/lib/analytics";
 
 export function DownloadCTA() {
   return (
@@ -23,12 +24,13 @@ export function DownloadCTA() {
           <Button
             size="lg"
             className="bg-[#1B4332] hover:bg-white hover:text-[#081C15] text-white px-12 py-10 text-2xl rounded-full transition-all duration-500 shadow-2xl"
-            onClick={() =>
+            onClick={() => {
+              trackCTAClick('download_google_play', 'download_cta');
               window.open(
                 "https://play.google.com/store/apps/details?id=com.agricola.prod",
                 "_blank",
-              )
-            }
+              );
+            }}
           >
             <Play className="w-8 h-8 mr-4 fill-current" />
             Download on Google Play

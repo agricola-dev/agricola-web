@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.0 — 2026-04-09
+
+### Added
+- GA4 analytics via `VITE_GA_MEASUREMENT_ID` env variable (injected at build time)
+- `src/lib/analytics.ts` — typed wrappers: `trackPageView`, `trackCTAClick`, `trackScrollDepth`
+- `src/components/RouteTracker.tsx` — SPA page view tracking on route change + scroll depth milestones (25/50/75/90%)
+- CTA click tracking on all download buttons (Hero, DownloadCTA) and Navbar Get App buttons
+- `.env.example` documenting required env variable
+- GitHub Actions build step now injects `GA_MEASUREMENT_ID` secret as `VITE_GA_MEASUREMENT_ID`
+
+---
+
 ## 0.1.0 — 2026-04-08
 
 ### Added
