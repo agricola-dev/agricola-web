@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 — 2026-04-09
+
+### Added
+- Full favicon set: `favicon.ico` (16+32 px multi-size), `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png` (180×180), `android-chrome-192x192.png`, `android-chrome-512x512.png`
+- `public/site.webmanifest` — web app manifest with name, theme color, and icon references
+- Updated `index.html` favicon links: replaced single JPEG reference with proper multi-size ICO, PNG, apple-touch-icon, and manifest link tags
+
+---
+
 ## 0.2.0 — 2026-04-09
 
 ### Added
