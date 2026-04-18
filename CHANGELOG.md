@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.1 - 2026-04-18
+
+### Changed
+- Change contact email from `dumelang@agricola-app.com` to `support@agricola-app.com`
+
+---
+
 ## 0.4.0 — 2026-04-18
 
 ### Added

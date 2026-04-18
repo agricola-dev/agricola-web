@@ -1,17 +1,17 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export function Footer() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const scrollToSection = (href: string) => {
-    if (pathname === '/') {
+    if (pathname === "/") {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      navigate('/', { state: { scrollTo: href } });
+      navigate("/", { state: { scrollTo: href } });
     }
   };
 
@@ -100,7 +100,7 @@ export function Footer() {
                 Contact
               </p>
               <p className="text-lg font-bold text-[#081C15]">
-                dumelang@agricola-app.com
+                support@agricola-app.com
               </p>
               <p className="text-lg font-bold text-[#081C15]">
                 +267 78 210 642
