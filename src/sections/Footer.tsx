@@ -126,6 +126,12 @@ export function Footer() {
             >
               Terms
             </Link>
+            <Link
+              to="/delete-account"
+              className="text-sm font-bold text-[#081C15]/30 uppercase tracking-widest hover:text-[#081C15]"
+            >
+              Delete Account
+            </Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.0 — 2026-04-18
+
+### Added
+- `src/pages/DeleteAccountPage.tsx` — dedicated account deletion page at `/delete-account`
+- Step-by-step in-app deletion guide (4 steps)
+- Data deletion and retention disclosures
+- Email contact card linking to `dumelang@agricola-app.com` for manual deletion requests
+- "Delete Account" link added to Footer alongside Privacy and Terms
+
+---
+
 ## 0.3.0 — 2026-04-09
 
 ### Added

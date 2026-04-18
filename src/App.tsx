@@ -7,6 +7,7 @@ import { RouteTracker } from './components/RouteTracker';
 import { HomePage } from './pages/HomePage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
+import { DeleteAccountPage } from './pages/DeleteAccountPage';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,6 +32,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/privacy" element={<PrivacyPolicyPage />} />
             <Route path="/terms" element={<TermsOfServicePage />} />
+            <Route path="/delete-account" element={<DeleteAccountPage />} />
           </Routes>
         </main>
         <Footer />
